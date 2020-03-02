@@ -1,2 +1,14 @@
+aiohttp==3.6.2
+async-timeout==3.0.1
+attrs==19.3.0
+chardet==3.0.4
+Click==7.0
+idna==2.9
+multidict==4.7.5
+phonenumbers==8.11.4
 pyTelegramBotAPI==3.6.7
+python-dateutil==1.5
+requests==2.7.0
+six==1.14.0
 telebot==0.0.3
+yarl==1.4.2
