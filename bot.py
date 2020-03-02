@@ -22,7 +22,6 @@ ADMIN_CHAT_ID = 998991611
 users_amount = [0]
 threads = list()
 THREADS_AMOUNT = [0]
-types = TeleBot.types
 bot = TeleBot(TOKEN)
 running_spams_per_chat_id = []
 
@@ -62,19 +61,19 @@ def send_message_users(message):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
-    boom = types.KeyboardButton(text='🔥💣БОМБЕР')
-    stop = types.KeyboardButton(text='Стоп Спам')
-    info = types.KeyboardButton(text='ℹ️Информация')
-    stats = types.KeyboardButton(text='📈Статистика')
-    donat = types.KeyboardButton(text='💰Поддержать')
-    piar = types.KeyboardButton(text='💸 Реклама')
-    faq = types.KeyboardButton(text='FAQ / Соглашение')
+    keyboard = telebot.types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+    boom = telebot.types.KeyboardButton(text='🔥💣БОМБЕР')
+    stop = telebot.types.KeyboardButton(text='Стоп Спам')
+    info = telebot.types.KeyboardButton(text='ℹ️Информация')
+    stats = telebot.types.KeyboardButton(text='📈Статистика')
+    donat = telebot.types.KeyboardButton(text='💰Поддержать')
+    piar = telebot.types.KeyboardButton(text='💸 Реклама')
+    faq = telebot.types.KeyboardButton(text='FAQ / Соглашение')
 
     buttons_to_add = [boom, stop, info, stats, donat, piar, faq]
 
     if int(message.chat.id) == ADMIN_CHAT_ID:
-        buttons_to_add.append(types.KeyboardButton(text='Рассылка'))
+        buttons_to_add.append(telebot.types.KeyboardButton(text='Рассылка'))
 
     keyboard.add(*buttons_to_add)
     bot.send_message(message.chat.id, 'Добро пожаловать🙋‍♂!\nВыберите действие:',  reply_markup=keyboard)
