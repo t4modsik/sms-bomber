@@ -221,7 +221,6 @@ def spam_handler(phone, chat_id, force):
         print('Максимальное количество тредов исполняется. Действие отменено.')
 
 
-@bot.message_handler(content_types=['text'])
 def handle_message_received(message):
     chat_id = int(message.chat.id)
     text = message.text
