@@ -59,6 +59,7 @@ def send_message_users(message):
     [send_message(chat_id) for chat_id in ids_list]
 
 
+@bot.message_handler(commands=['start'])
 def start(message):
     keyboard = telebot.types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
     boom = telebot.types.KeyboardButton(text='🔥💣БОМБЕР')
@@ -221,6 +222,7 @@ def spam_handler(phone, chat_id, force):
         print('Максимальное количество тредов исполняется. Действие отменено.')
 
 
+@bot.message_handler(content_types=['text'])
 def handle_message_received(message):
     chat_id = int(message.chat.id)
     text = message.text
