@@ -74,7 +74,7 @@ def start(message):
     buttons_to_add = [boom, stop, stats, donat, piar, test, faq]
 
     if int(message.chat.id) == ADMIN_CHAT_ID:
-        buttons_to_add.append(types.KeyboardButton(text='Рассылка'))
+        buttons_to_add.append(types.KeyboardButton(text='❗Рассылка'))
 
     keyboard.add(*buttons_to_add)
     bot.send_message(message.chat.id, 'Добро пожаловать🙋‍♂!\nВыберите действие:',  reply_markup=keyboard)
