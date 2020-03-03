@@ -16,7 +16,7 @@ THREADS_LIMIT = 400
 chat_ids_file = 'chat_ids.txt'
 
 # Нужно вписать айди админского чата
-ADMIN_CHAT_ID = 998991611,653190081
+ADMIN_CHAT_ID = 998991611
 
 # Эти переменные лучше не менять
 users_amount = [0]
